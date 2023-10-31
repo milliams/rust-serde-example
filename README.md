@@ -137,3 +137,11 @@ We can then print the YAML version of the config (add this straight after `serde
 ```rust
 println!("{}", serde_yaml::to_string(&config)?);
 ```
+
+And to make sure that the legacy value does not get written out, set:
+
+```rust
+skip_serializing_if = "Option::is_none"
+```
+
+in its `serde` setting.
