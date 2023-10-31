@@ -15,10 +15,9 @@ struct User {
 }
 
 #[derive(Debug, Deserialize)]
+#[serde(rename_all = "snake_case")]
 enum Role {
-    #[serde(rename = "admin")]
     Admin,
-    #[serde(rename = "user")]
     User,
 }
 

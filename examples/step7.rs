@@ -6,7 +6,7 @@ struct Config {
     provider: String,
     service: String,
     users: Vec<User>,
-    #[serde(rename = "LegacyType")]
+    #[serde(rename = "LegacyType", skip_serializing_if = "Option::is_none")]
     legacy_type: Option<String>,
 }
 
@@ -17,10 +17,9 @@ struct User {
 }
 
 #[derive(Debug, Deserialize, Serialize)]
+#[serde(rename_all = "snake_case")]
 enum Role {
-    #[serde(rename = "admin")]
     Admin,
-    #[serde(rename = "user")]
     User,
 }
 
