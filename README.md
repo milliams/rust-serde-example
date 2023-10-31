@@ -92,6 +92,14 @@ struct User {
 }
 ```
 
+and update the printing of it:
+
+```rust
+for User { username, role } in users {
+    println!("- {username} with role {role}");
+}
+```
+
 ## Step 5 - Make a `Role` `enum`
 
 Here, we want to be able to specify the exact possible values for this entry so make an `enum` to hold i:.
@@ -109,6 +117,12 @@ enum Role {
     Admin,
     User,
 }
+```
+
+and update the printing `role` to use the `Debug`:
+
+```rust
+println!("- {username} with role {role:?}");
 ```
 
 ## Step 6 - Add optional setting
