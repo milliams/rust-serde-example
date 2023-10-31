@@ -1,0 +1,5 @@
+{
+  "provider" :"digital-lab",
+  "service": "cluster-in-the-cloud",
+  "users": [{"username": "matt", "role":"admin"}]
+}
